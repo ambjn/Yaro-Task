@@ -58,6 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Column(
           children: [
+            const SizedBox(
+              height: 15,
+            ),
             Container(
               margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
               width: double.infinity,
@@ -80,6 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             // Popular Indices
+            const SizedBox(
+              height: 25,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: Row(
@@ -167,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           }),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 25,
                     ),
                     // YARO's Weekly Trending
                     Padding(
@@ -307,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     )),
                     const SizedBox(
-                      height: 10,
+                      height: 25,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -417,7 +423,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     // Top Loser
                     const SizedBox(
-                      height: 5,
+                      height: 25,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
