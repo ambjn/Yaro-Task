@@ -58,31 +58,26 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Column(
           children: [
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
-                width: double.infinity,
-                height: 50,
-                child: TextField(
-                  controller: controller,
-                  textAlignVertical: TextAlignVertical.bottom,
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.indigo,
-                      suffixIcon: const Icon(Icons.search,
-                          color: Colors.white, size: 20),
-                      hintText: 'search',
-                      hintStyle: const TextStyle(
-                        color: Colors.white,
-                      ),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none)),
-                ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+              width: double.infinity,
+              height: 50,
+              child: TextField(
+                controller: controller,
+                textAlignVertical: TextAlignVertical.bottom,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.indigo,
+                    suffixIcon:
+                        const Icon(Icons.search, color: Colors.white, size: 20),
+                    hintText: 'search',
+                    hintStyle: const TextStyle(
+                      color: Colors.white,
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none)),
               ),
-            ),
-            const SizedBox(
-              height: 10,
             ),
             // Popular Indices
             Padding(
@@ -99,418 +94,441 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 10,
             ),
-            SingleChildScrollView(
-              child: Container(
-                  child: Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(right: 10),
-                    height: 100,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return Card(
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Container(
-                                padding: const EdgeInsets.all(10),
-                                // height: 50,
-                                width: 225,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: const [
-                                        Text(
-                                          "NSE NIFTY 50",
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const [
-                                        Text(
-                                          "15,360.6",
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          "-2.11",
-                                          style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                )),
-                          );
-                        }),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  // YARO's Weekly Trending
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          "YARO's Weekly Trending",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                        Container(
-                          height: 30,
-                          width: 80,
-                          child: ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll<Color>(
-                                        Colors.indigo.shade300),
+            Flexible(
+              child: SingleChildScrollView(
+                child: Container(
+                    child: Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      height: 100,
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Card(
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
-                              onPressed: () {},
-                              child: const Text("See All")),
-                        )
-                      ],
+                              child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  // height: 50,
+                                  width: 225,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: const [
+                                          Text(
+                                            "NSE NIFTY 50",
+                                            style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 10,
+                                      ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const [
+                                          Text(
+                                            "15,360.6",
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            "-2.11",
+                                            style: TextStyle(
+                                              color: Colors.red,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  )),
+                            );
+                          }),
                     ),
-                  )
-                ],
-              )),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            SingleChildScrollView(
-              child: Container(
-                  child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(right: 10),
-                    height: 80,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return Card(
-                            margin: const EdgeInsets.all(10),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.indigo.shade100,
-                                    borderRadius: BorderRadius.circular(10)),
-                                padding: const EdgeInsets.all(10),
-                                height: 100,
-                                width: 250,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Image.network(
-                                          "https://www.gurpreetsaluja.com/wp-content/uploads/2020/09/HDFC-LOGO.png",
-                                          width: 60,
-                                          height: 60,
-                                          alignment: Alignment.topLeft,
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        Flexible(
-                                          child: Column(
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    // YARO's Weekly Trending
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "YARO's Weekly Trending",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w500),
+                          ),
+                          Container(
+                            height: 30,
+                            width: 80,
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll<Color>(
+                                          Colors.indigo.shade300),
+                                ),
+                                onPressed: () {},
+                                child: const Text("See All")),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                        child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(right: 10),
+                          height: 80,
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: 3,
+                              itemBuilder: (context, index) {
+                                return Card(
+                                  margin: const EdgeInsets.all(10),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15.0),
+                                  ),
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.indigo.shade100,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      padding: const EdgeInsets.all(10),
+                                      height: 100,
+                                      width: 250,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: const [
-                                                  Text(
-                                                    "Reliance industries limited",
-                                                    style:
-                                                        TextStyle(fontSize: 16),
-                                                  ),
-                                                  Text(
-                                                    "2460",
-                                                    style:
-                                                        TextStyle(fontSize: 15),
-                                                  ),
-                                                ],
+                                              Image.asset(
+                                                'assets/images/hdfc-logo.png',
+                                                width: 60,
+                                                height: 60,
+                                                alignment: Alignment.topLeft,
                                               ),
                                               const SizedBox(
-                                                height: 20,
+                                                width: 10,
                                               ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: const [
-                                                  Text("Reliance",
-                                                      style: TextStyle(
-                                                          color: Colors.black45,
-                                                          fontSize: 15)),
-                                                  Text(
-                                                    "-2%",
-                                                    style: TextStyle(
-                                                      color: Colors.red,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.bold,
+                                              Flexible(
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: const [
+                                                        Text(
+                                                          "Reliance industries limited",
+                                                          style: TextStyle(
+                                                              fontSize: 16),
+                                                        ),
+                                                        Text(
+                                                          "2460",
+                                                          style: TextStyle(
+                                                              fontSize: 15),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  )
-                                                ],
-                                              ),
+                                                    const SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: const [
+                                                        Text("Reliance",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black45,
+                                                                fontSize: 15)),
+                                                        Text(
+                                                          "-2%",
+                                                          style: TextStyle(
+                                                            color: Colors.red,
+                                                            fontSize: 15,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ),
+                                              )
                                             ],
                                           ),
-                                        )
+                                        ],
+                                      )),
+                                );
+                              }),
+                        ),
+                      ],
+                    )),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Top Gainer",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w500),
+                          ),
+                          Container(
+                            height: 30,
+                            width: 80,
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll<Color>(
+                                          Colors.indigo.shade300),
+                                ),
+                                onPressed: () {},
+                                child: const Text("See All")),
+                          )
+                        ],
+                      ),
+                    ),
+                    Card(
+                      margin: const EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.indigo.shade100,
+                              borderRadius: BorderRadius.circular(10)),
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/hdfc-logo.png',
+                                    width: 60,
+                                    height: 60,
+                                    alignment: Alignment.topLeft,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Flexible(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
+                                            Text(
+                                              "Reliance industries limited",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                            Text(
+                                              "2460",
+                                              style: TextStyle(fontSize: 15),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
+                                            Text(
+                                              "Reliance",
+                                              style: TextStyle(
+                                                  color: Colors.black45,
+                                                  fontSize: 15),
+                                            ),
+                                            Text(
+                                              "-2%",
+                                              style: TextStyle(
+                                                color: Colors.red,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
-                                  ],
-                                )),
-                          );
-                        }),
-                  ),
-                ],
-              )),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Top Gainer",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  Container(
-                    height: 30,
-                    width: 80,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll<Color>(
-                              Colors.indigo.shade300),
-                        ),
-                        onPressed: () {},
-                        child: const Text("See All")),
-                  )
-                ],
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.all(10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.indigo.shade100,
-                      borderRadius: BorderRadius.circular(10)),
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                                  )
+                                ],
+                              ),
+                            ],
+                          )),
+                    ),
+                    // Top Loser
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.network(
-                            "https://www.gurpreetsaluja.com/wp-content/uploads/2020/09/HDFC-LOGO.png",
-                            width: 60,
-                            height: 60,
-                            alignment: Alignment.topLeft,
+                          const Text(
+                            "Top Loser",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w500),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Reliance industries limited",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                    Text(
-                                      "2460",
-                                      style: TextStyle(fontSize: 15),
-                                    ),
-                                  ],
+                          Container(
+                            height: 30,
+                            width: 80,
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll<Color>(
+                                          Colors.indigo.shade300),
                                 ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Reliance",
-                                      style: TextStyle(
-                                          color: Colors.black45, fontSize: 15),
-                                    ),
-                                    Text(
-                                      "-2%",
-                                      style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                onPressed: () {},
+                                child: const Text("See All")),
                           )
                         ],
                       ),
-                    ],
-                  )),
-            ),
-            // Top Loser
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Top Loser",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                  ),
-                  Container(
-                    height: 30,
-                    width: 80,
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll<Color>(
-                              Colors.indigo.shade300),
-                        ),
-                        onPressed: () {},
-                        child: const Text("See All")),
-                  )
-                ],
-              ),
-            ),
-            Card(
-              margin: const EdgeInsets.all(10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.indigo.shade100,
-                      borderRadius: BorderRadius.circular(10)),
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.network(
-                            "https://www.gurpreetsaluja.com/wp-content/uploads/2020/09/HDFC-LOGO.png",
-                            width: 60,
-                            height: 60,
-                            alignment: Alignment.topLeft,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Reliance industries limited",
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                    Text(
-                                      "2460",
-                                      style: TextStyle(fontSize: 15),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      "Reliance",
-                                      style: TextStyle(
-                                          color: Colors.black45, fontSize: 15),
-                                    ),
-                                    Text(
-                                      "-2%",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                    ),
+                    Card(
+                      margin: const EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
-                    ],
-                  )),
-            )
+                      child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.indigo.shade100,
+                              borderRadius: BorderRadius.circular(10)),
+                          padding: const EdgeInsets.all(10),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/hdfc-logo.png',
+                                    width: 60,
+                                    height: 60,
+                                    alignment: Alignment.topLeft,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Flexible(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
+                                            Text(
+                                              "Reliance industries limited",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                            Text(
+                                              "2460",
+                                              style: TextStyle(fontSize: 15),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: const [
+                                            Text(
+                                              "Reliance",
+                                              style: TextStyle(
+                                                  color: Colors.black45,
+                                                  fontSize: 15),
+                                            ),
+                                            Text(
+                                              "-2%",
+                                              style: TextStyle(
+                                                  color: Colors.red,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          )),
+                    )
+                  ],
+                )),
+              ),
+            ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
