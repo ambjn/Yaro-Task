@@ -12,37 +12,51 @@ class _HomeScreenState extends State<HomeScreen> {
   TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          elevation: 5,
+          elevation: 0,
+          automaticallyImplyLeading: false,
           centerTitle: true,
+          toolbarHeight: 40,
           leading: IconButton(
               color: Colors.white,
               onPressed: () {},
               icon: const Icon(
-                Icons.arrow_circle_left,
+                FontAwesomeIcons.circleLeft,
                 color: Colors.black,
-                size: 35,
+                size: 30,
               )),
           title: const Text(
             "Invest",
-            style:
-                TextStyle(fontSize: 30, letterSpacing: 1, color: Colors.black),
+            style: TextStyle(
+              letterSpacing: 1.5,
+              fontSize: 30,
+              color: Colors.black,
+            ),
           ),
+          bottom: const TabBar(
+              indicatorColor: Colors.indigo,
+              indicatorWeight: 4,
+              labelColor: Colors.indigo,
+              unselectedLabelColor: Colors.grey,
+              labelStyle: TextStyle(fontWeight: FontWeight.bold),
+              tabs: [
+                Tab(
+                  text: 'Explore',
+                ),
+                Tab(
+                  text: 'Portfolio',
+                ),
+                Tab(
+                  text: 'Watchlist',
+                )
+              ]),
         ),
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text("Explore"),
-                  Text("Portfolio"),
-                  Text("Watchlist")
-                ],
-              ),
-            ),
             const SizedBox(
               height: 10,
             ),
@@ -52,15 +66,16 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 50,
               child: TextField(
                 controller: controller,
+                textAlignVertical: TextAlignVertical.bottom,
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.indigo,
-                    suffixIcon: const Icon(
-                      Icons.search,
+                    suffixIcon:
+                        const Icon(Icons.search, color: Colors.white, size: 20),
+                    hintText: 'search',
+                    hintStyle: const TextStyle(
                       color: Colors.white,
                     ),
-                    hintText: 'search',
-                    hintStyle: TextStyle(color: Colors.white),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none)),
@@ -94,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: 5,
+                        itemCount: 3,
                         itemBuilder: (context, index) {
                           return Card(
                             elevation: 5,
@@ -102,6 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Container(
+                                padding: const EdgeInsets.all(10),
                                 height: 50,
                                 width: 250,
                                 child: Column(
@@ -112,11 +128,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       children: const [
                                         Text(
                                           "NSE NIFTY 50",
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ],
                                     ),
                                     const SizedBox(
-                                      height: 10,
+                                      height: 30,
                                     ),
                                     Column(
                                       crossAxisAlignment:
@@ -124,8 +144,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: const [
-                                        Text("15,360.6"),
-                                        Text("-2.11")
+                                        Text(
+                                          "15,360.6",
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          "-2.11",
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )
                                       ],
                                     )
                                   ],
@@ -148,13 +184,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                         Container(
-                          decoration: BoxDecoration(
-                              color: Colors.indigoAccent,
-                              borderRadius: BorderRadius.circular(50)),
                           height: 30,
                           width: 80,
                           child: ElevatedButton(
-                              onPressed: () {}, child: Text("See All")),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll<Color>(
+                                        Colors.indigo.shade300),
+                              ),
+                              onPressed: () {},
+                              child: const Text("See All")),
                         )
                       ],
                     ),
@@ -222,10 +261,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 children: const [
                                                   Text(
                                                     "Reliance industries limited",
+                                                    style:
+                                                        TextStyle(fontSize: 16),
                                                   ),
-                                                  SizedBox(width: 50),
                                                   Text(
                                                     "2460",
+                                                    style:
+                                                        TextStyle(fontSize: 15),
                                                   ),
                                                 ],
                                               ),
@@ -239,13 +281,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: const [
-                                                  Text(
-                                                    "Reliance",
-                                                    style: TextStyle(
-                                                      color: Colors.black45,
-                                                    ),
-                                                  ),
-                                                  SizedBox(width: 50),
+                                                  Text("Reliance",
+                                                      style: TextStyle(
+                                                          color: Colors.black45,
+                                                          fontSize: 15)),
                                                   Text(
                                                     "-2%",
                                                     style: TextStyle(
@@ -283,13 +322,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(10)),
                     height: 30,
                     width: 80,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text("See All")),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll<Color>(
+                              Colors.indigo.shade300),
+                        ),
+                        onPressed: () {},
+                        child: const Text("See All")),
                   )
                 ],
               ),
@@ -332,10 +373,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: const [
                                     Text(
                                       "Reliance industries limited",
+                                      style: TextStyle(fontSize: 16),
                                     ),
-                                    SizedBox(width: 50),
                                     Text(
                                       "2460",
+                                      style: TextStyle(fontSize: 15),
                                     ),
                                   ],
                                 ),
@@ -350,10 +392,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       "Reliance",
                                       style: TextStyle(
-                                        color: Colors.black45,
-                                      ),
+                                          color: Colors.black45, fontSize: 15),
                                     ),
-                                    SizedBox(width: 50),
                                     Text(
                                       "-2%",
                                       style: TextStyle(
@@ -386,13 +426,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   Container(
-                    decoration: BoxDecoration(
-                        color: Colors.indigo.shade300,
-                        borderRadius: BorderRadius.circular(10)),
                     height: 30,
                     width: 80,
                     child: ElevatedButton(
-                        onPressed: () {}, child: const Text("See All")),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll<Color>(
+                              Colors.indigo.shade300),
+                        ),
+                        onPressed: () {},
+                        child: const Text("See All")),
                   )
                 ],
               ),
@@ -435,12 +477,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: const [
                                     Text(
                                       "Reliance industries limited",
-                                      style: TextStyle(color: Colors.black),
+                                      style: TextStyle(fontSize: 16),
                                     ),
                                     SizedBox(width: 50),
                                     Text(
                                       "2460",
-                                      style: TextStyle(color: Colors.black),
+                                      style: TextStyle(fontSize: 15),
                                     ),
                                   ],
                                 ),
@@ -455,8 +497,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       "Reliance",
                                       style: TextStyle(
-                                        color: Colors.black45,
-                                      ),
+                                          color: Colors.black45, fontSize: 15),
                                     ),
                                     Text(
                                       "-2%",
@@ -477,38 +518,36 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           elevation: 0,
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                tooltip: "Stocks",
-                icon: const Icon(
-                  FontAwesomeIcons.stackExchange,
-                  color: Colors.red,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                tooltip: "Mutual Funds",
-                icon: const Icon(
-                  FontAwesomeIcons.s,
-                  color: Colors.green,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                tooltip: "Fix Deposit",
+          selectedItemColor: Colors.indigoAccent,
+          unselectedItemColor: Colors.indigoAccent,
+          items: const [
+            BottomNavigationBarItem(
                 icon: Icon(
-                  FontAwesomeIcons.ticket,
-                  color: Colors.black45,
+                  Icons.bar_chart,
+                  size: 30,
+                  color: Colors.black54,
                 ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        ));
+                label: 'Stocks'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.cabin,
+                  size: 30,
+                  color: Colors.black54,
+                ),
+                label: 'Mutual Funds'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.deck,
+                  size: 30,
+                  color: Colors.black54,
+                ),
+                label: 'Fix Deposits'),
+          ],
+        ),
+      ),
+    );
   }
 }
