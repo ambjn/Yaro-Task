@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,45 +32,64 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [Text("Explore"), Text("Portfolio"), Text("Watchlist")],
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("Explore"),
+                  Text("Portfolio"),
+                  Text("Watchlist")
+                ],
+              ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
-              margin: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
               width: double.infinity,
-              height: 60,
+              height: 50,
               child: TextField(
                 controller: controller,
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.black12,
-                    prefixIcon: Icon(
+                    fillColor: Colors.indigo,
+                    suffixIcon: const Icon(
                       Icons.search,
-                      color: Colors.grey.shade800,
+                      color: Colors.white,
                     ),
-                    hintText: 'Search anything',
+                    hintText: 'search',
+                    hintStyle: TextStyle(color: Colors.white),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none)),
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
-            Text("Popular Indices"),
+            // Popular Indices
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Row(
+                children: const [
+                  Text(
+                    "Popular Indices",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             SingleChildScrollView(
               child: Container(
                   child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: const EdgeInsets.only(right: 10),
                     height: 120,
                     child: ListView.builder(
                         shrinkWrap: true,
@@ -85,18 +105,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 100,
                                 width: 250,
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Row(
-                                      children: [
-                                        Text("NSE NIFTY 50",
-                                            textScaleFactor: 1.2),
+                                      children: const [
+                                        Text(
+                                          "NSE NIFTY 50",
+                                        ),
                                       ],
                                     ),
                                     const SizedBox(
-                                      height: 20,
+                                      height: 10,
                                     ),
                                     Column(
-                                      children: [
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: const [
                                         Text("15,360.6"),
                                         Text("-2.11")
                                       ],
@@ -107,28 +134,36 @@ class _HomeScreenState extends State<HomeScreen> {
                         }),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("YARO's Weekly Trending"),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.blueAccent,
-                            borderRadius: BorderRadius.circular(10)),
-                        height: 30,
-                        width: 80,
-                        child: ElevatedButton(
-                            onPressed: () {}, child: Text("See All")),
-                      )
-                    ],
+                  // YARO's Weekly Trending
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "YARO's Weekly Trending",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(10)),
+                          height: 30,
+                          width: 80,
+                          child: ElevatedButton(
+                              onPressed: () {}, child: Text("See All")),
+                        )
+                      ],
+                    ),
                   )
                 ],
               )),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             SingleChildScrollView(
               child: Container(
@@ -136,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(right: 10),
-                    height: 120,
+                    height: 80,
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
@@ -181,11 +216,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         .spaceBetween,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
+                                                children: const [
                                                   Text(
                                                     "Reliance industries limited",
                                                   ),
-                                                  const SizedBox(width: 50),
+                                                  SizedBox(width: 50),
                                                   Text(
                                                     "2460",
                                                   ),
@@ -200,14 +235,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                                         .spaceBetween,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
+                                                children: const [
                                                   Text(
                                                     "Reliance",
+                                                    style: TextStyle(
+                                                      color: Colors.black45,
+                                                    ),
                                                   ),
-                                                  const SizedBox(width: 50),
+                                                  SizedBox(width: 50),
                                                   Text(
                                                     "-2%",
-                                                  ),
+                                                    style: TextStyle(
+                                                      color: Colors.red,
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  )
                                                 ],
                                               ),
                                             ],
@@ -224,22 +268,28 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
             ),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Top Gainer"),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(10)),
-                  height: 30,
-                  width: 80,
-                  child:
-                      ElevatedButton(onPressed: () {}, child: Text("See All")),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Top Gainer",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.blueAccent,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 30,
+                    width: 80,
+                    child: ElevatedButton(
+                        onPressed: () {}, child: Text("See All")),
+                  )
+                ],
+              ),
             ),
             Card(
               margin: const EdgeInsets.all(10),
@@ -273,11 +323,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Reliance industries limited",
                                     ),
-                                    const SizedBox(width: 50),
+                                    SizedBox(width: 50),
                                     Text(
                                       "2460",
                                     ),
@@ -290,13 +340,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Reliance",
+                                      style: TextStyle(
+                                        color: Colors.black45,
+                                      ),
                                     ),
-                                    const SizedBox(width: 50),
+                                    SizedBox(width: 50),
                                     Text(
                                       "-2%",
+                                      style: TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -308,23 +366,30 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   )),
             ),
+            // Top Loser
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Top Loser"),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      borderRadius: BorderRadius.circular(10)),
-                  height: 30,
-                  width: 80,
-                  child:
-                      ElevatedButton(onPressed: () {}, child: Text("See All")),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Top Loser",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.blueAccent,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 30,
+                    width: 80,
+                    child: ElevatedButton(
+                        onPressed: () {}, child: const Text("See All")),
+                  )
+                ],
+              ),
             ),
             Card(
               margin: const EdgeInsets.all(10),
@@ -358,30 +423,38 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Reliance industries limited",
+                                      style: TextStyle(color: Colors.black),
                                     ),
-                                    const SizedBox(width: 50),
+                                    SizedBox(width: 50),
                                     Text(
                                       "2460",
+                                      style: TextStyle(color: Colors.black),
                                     ),
                                   ],
                                 ),
                                 const SizedBox(
-                                  height: 5,
+                                  height: 10,
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Reliance",
+                                      style: TextStyle(
+                                        color: Colors.black45,
+                                      ),
                                     ),
-                                    const SizedBox(width: 50),
                                     Text(
                                       "-2%",
+                                      style: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ],
                                 ),
@@ -402,34 +475,26 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               IconButton(
-                tooltip: "add music",
+                tooltip: "Stocks",
                 icon: const Icon(
-                  FontAwesomeIcons.music,
+                  FontAwesomeIcons.stackExchange,
                   color: Colors.red,
                 ),
                 onPressed: () {},
               ),
               IconButton(
-                tooltip: "add photo",
+                tooltip: "Mutual Funds",
                 icon: const Icon(
-                  FontAwesomeIcons.squarePollHorizontal,
+                  FontAwesomeIcons.s,
                   color: Colors.green,
                 ),
                 onPressed: () {},
               ),
               IconButton(
-                tooltip: "add general",
+                tooltip: "Fix Deposit",
                 icon: Icon(
-                  FontAwesomeIcons.bell,
-                  color: Colors.blue.shade900,
-                ),
-                onPressed: () {},
-              ),
-              IconButton(
-                tooltip: "add reminder",
-                icon: const Icon(
-                  FontAwesomeIcons.circleCheck,
-                  color: Colors.yellow,
+                  FontAwesomeIcons.ticket,
+                  color: Colors.black45,
                 ),
                 onPressed: () {},
               ),
