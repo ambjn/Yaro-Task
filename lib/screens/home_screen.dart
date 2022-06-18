@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
@@ -57,28 +58,27 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
-              width: double.infinity,
-              height: 50,
-              child: TextField(
-                controller: controller,
-                textAlignVertical: TextAlignVertical.bottom,
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.indigo,
-                    suffixIcon:
-                        const Icon(Icons.search, color: Colors.white, size: 20),
-                    hintText: 'search',
-                    hintStyle: const TextStyle(
-                      color: Colors.white,
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none)),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+                width: double.infinity,
+                height: 50,
+                child: TextField(
+                  controller: controller,
+                  textAlignVertical: TextAlignVertical.bottom,
+                  decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.indigo,
+                      suffixIcon: const Icon(Icons.search,
+                          color: Colors.white, size: 20),
+                      hintText: 'search',
+                      hintStyle: const TextStyle(
+                        color: Colors.white,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none)),
+                ),
               ),
             ),
             const SizedBox(
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Container(
                     padding: const EdgeInsets.only(right: 10),
-                    height: 120,
+                    height: 100,
                     child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
@@ -118,8 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             child: Container(
                                 padding: const EdgeInsets.all(10),
-                                height: 50,
-                                width: 250,
+                                // height: 50,
+                                width: 225,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                     const SizedBox(
-                                      height: 30,
+                                      height: 10,
                                     ),
                                     Column(
                                       crossAxisAlignment:
@@ -309,9 +309,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               )),
             ),
-            const SizedBox(
-              height: 15,
-            ),
             Padding(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),
               child: Row(
@@ -346,7 +343,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(10)),
                   padding: const EdgeInsets.all(10),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -479,7 +475,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                       "Reliance industries limited",
                                       style: TextStyle(fontSize: 16),
                                     ),
-                                    SizedBox(width: 50),
                                     Text(
                                       "2460",
                                       style: TextStyle(fontSize: 15),
