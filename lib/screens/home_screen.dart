@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Container(
-                                height: 100,
+                                height: 50,
                                 width: 250,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,8 +149,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.blueAccent,
-                              borderRadius: BorderRadius.circular(10)),
+                              color: Colors.indigoAccent,
+                              borderRadius: BorderRadius.circular(50)),
                           height: 30,
                           width: 80,
                           child: ElevatedButton(
@@ -183,6 +183,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(15.0),
                             ),
                             child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.indigo.shade100,
+                                    borderRadius: BorderRadius.circular(10)),
                                 padding: const EdgeInsets.all(10),
                                 height: 100,
                                 width: 250,
@@ -227,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 ],
                                               ),
                                               const SizedBox(
-                                                height: 5,
+                                                height: 20,
                                               ),
                                               Row(
                                                 mainAxisAlignment:
@@ -297,6 +300,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.indigo.shade100,
+                      borderRadius: BorderRadius.circular(10)),
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -334,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                                 const SizedBox(
-                                  height: 5,
+                                  height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -381,7 +387,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Colors.blueAccent,
+                        color: Colors.indigo.shade300,
                         borderRadius: BorderRadius.circular(10)),
                     height: 30,
                     width: 80,
@@ -397,6 +403,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.indigo.shade100,
+                      borderRadius: BorderRadius.circular(10)),
                   padding: const EdgeInsets.all(10),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -436,7 +445,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                                 const SizedBox(
-                                  height: 10,
+                                  height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment:
