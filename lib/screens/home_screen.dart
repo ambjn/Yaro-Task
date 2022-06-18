@@ -90,6 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Row(
                 children: const [
+                  SizedBox(
+                    height: 15,
+                  ),
                   Text(
                     "Popular Indices",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
